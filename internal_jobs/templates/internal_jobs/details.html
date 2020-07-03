@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title">Job Details</h5>
+      </div>
+<br>
+<form>
+    <fieldset>
+       <div class="col-sm-4 column-height">
+           <label><b>Request ID: </b></label> {{job.request_id}}
+       </div>
+       <div class="col-sm-4 column-height">
+           <label><b>Division: </b></label> {{job.division}}
+       </div>
+        <div class="col-sm-4 column-height">
+           <label><b>Expertise: </b></label> {{job.expertise}}
+       </div>
+
+        <div class="col-sm-6 column-height">
+           <label><b>Experience: </b></label> {{job.experience}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Designation: </b></label> {{job.designation}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Location: </b></label> {{job.location}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Date Posted: </b></label> {{job.date_posted}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Job Expiry Date: </b></label> {{job.expiry_date}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Skill: </b></label> {{job.skills}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Job Description: </b></label>
+            {{job.job_description}}
+       </div>
+
+    </fieldset>
+</form>
+
+
+{% endblock %}

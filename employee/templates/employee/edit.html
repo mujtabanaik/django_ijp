@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="card border-dark mb-3" >
+  <div class="card-header">Update Employee</div>
+  <div class="card-body">
+     <form method = "POST" >{% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+                <label for="cu_id">CUID</label>
+                {{ employee_form.cu_id }}
+                {{ employee_form.cu_id.errors }}
+            </div>
+           <div class="col-sm-3 column-height mb-4">
+               <label for="name">Name</label>
+               {{ employee_form.name }}
+               {{ employee_form.name.errors }}
+           </div>
+
+            <div class="col-sm-3 column-height mb-4">
+               <label for="contact">Contact #</label>
+                {{ employee_form.contact }}
+                {{ employee_form.contact.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="designation">Designation</label>
+                {{ employee_form.designation }}
+                {{ employee_form.designation.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="marital_status">Marital Status</label>
+                {{ employee_form.marital_status }}
+                {{ employee_form.marital_status.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="employee_type">Employee Type</label>
+               {{ employee_form.employee_type }}
+                {{ employee_form.employee_type.errors }}
+               </select>
+           </div>
+            <div class="col-sm-3 column-height mb-4" >
+               <label for="employee_status">Employee Status</label>
+               {{ employee_form.employee_status }}
+                {{ employee_form.employee_status.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4" >
+               <label for="employee_level">Employee Level</label>
+               {{ employee_form.emp_level }}
+                {{ employee_form.emp_level.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="gender">Gender</label>
+                 {{ employee_form.gender }}
+                 {{ employee_form.gender.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="dob">Date Of Birth</label>
+                {{ employee_form.dob }}
+                {{ employee_form.dob.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="joining_date">Joining Date</label>
+                {{ employee_form.joining_date }}
+                {{ employee_form.joining_date.errors }}
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 column-height mb-4">
+               <label for="skill_set">Skill Set</label>
+                {{ employee_form.skill_set }}
+                {{ employee_form.skill_set.errors }}
+           </div>
+
+            <div class="col-sm-6 column-height mb-4">
+               <label for="address">Address</label>
+                {{ employee_form.address }}
+                {{ employee_form.address.errors }}
+           </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+                <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Job Applicants{% endblock %}
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title">Job Applicants</h5>
+      </div>
+<br>
+<table class="table w-auto" id="applicantsTable">
+            <thead>
+                <tr >
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Skill</th>
+                    <th scope="col">Reporting Lead</th>
+                    <th scope="col">Reporting Manager</th>
+                    <th scope="col">Job Id</th>
+                    <th scope="col">Applied Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for applicant in job_applications %}
+              <tr>
+                  <td>{{applicant.employee_id}}</td>
+                  <td>{{applicant.employee_name}}</td>
+                  <td>{{applicant.skills}}</td>
+                  <td>{{applicant.reporting_lead}}</td>
+                  <td>{{applicant.reporting_manager}}</td>
+                  <td>{{applicant.job_id}}</td>
+                  <td>{{applicant.date_applied}}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Employees{% endblock %}
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title">Employees</h5>
+      </div>
+  <table class="table" id="employeeTable">
+            <thead>
+                <tr>
+                    <th scope="col">CUID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Joining Date</th>
+                    <th scope="col">Employee Type</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for employee in employees %}
+              <tr>
+                  <td>{{employee.cu_id}}</td>
+                  <td>{{employee.name}}</td>
+                  <td>{{employee.designation}}</td>
+                  <td>{{employee.joining_date}}</td>
+                  <td>{{employee.employee_type}}</td>
+                  <td>{{employee.employee_status}}</td>
+                  <td>{{employee.contact}}</td>
+                  <td>
+                      {% if user.is_authenticated %}
+                      {% if user.is_superuser %}
+                      <a href="{% url 'edit' employee.id %}"><i class="fas fa-edit"></i></a>
+                      <a href="{% url 'details' employee.id %}"><i class="fas fa-eye"></i></a>
+                      <a href="{% url 'delete' employee.id %}"><i class="fas fa-trash"></i></a>
+<!--                      <a data-toggle="modal" data-target="#exampleModal" data-whatever="{% url 'delete' employee.id  %}" ><i class="fas fa-trash"></i></a>-->
+                      {% endif %}{% endif %}
+
+                  </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+
+
+
+<div class="modal" id="exampleModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Confirmation?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post">
+          <div class="modal-body">
+              Do you really want to delete this employee? <br>This process cannot be undone.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+<!--          <button type="button" class="btn btn-danger">Delete</button>-->
+              <a id="employee_delete_id" class="btn btn-danger" href="">Delete</a>
+          </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.21/js/dataTables.material.min.js"></script>-->
+<script type="text/javascript">
+<!--$('#dtBasicExample').DataTable();-->
+<!-- $('.dataTables_length').addClass('bs-select');-->
+<!--$(document).ready(function() {-->
+
+<!--&lt;!&ndash;    $('#example').DataTable( {&ndash;&gt;-->
+<!--&lt;!&ndash;        autoWidth: false,&ndash;&gt;-->
+<!--&lt;!&ndash;        columnDefs: [&ndash;&gt;-->
+<!--&lt;!&ndash;            {&ndash;&gt;-->
+<!--&lt;!&ndash;                targets: ['_all'],&ndash;&gt;-->
+<!--&lt;!&ndash;                className: 'mdc-data-table__cell'&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;        ]&ndash;&gt;-->
+<!--&lt;!&ndash;    } );&ndash;&gt;-->
+<!--} );-->
+
+
+
+</script>
+
+{% endblock %}
+

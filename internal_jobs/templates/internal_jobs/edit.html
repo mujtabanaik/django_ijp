@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title">Edit Job</h5>
+      </div>
+<br>
+<form method="post">{% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+               <label for="request_id">Request ID</label>
+                {{ requirement_form.request_id }}
+                {{ requirement_form.request_id.errors }}
+            </div>
+           <div class="col-sm-3 column-height mb-4">
+               <label for="division">Division</label>
+                {{ requirement_form.division }}
+                {{ requirement_form.division.errors }}
+           </div>
+
+            <div class="col-sm-3 column-height mb-4">
+               <label for="designation">Designation</label>
+                {{ requirement_form.designation }}
+                {{ requirement_form.designation.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="status">Experience</label>
+                {{ requirement_form.experience }}
+                {{ requirement_form.experience.errors }}
+           </div>
+
+            <div class="col-sm-3 column-height mb-4">
+               <label for="gender">Location</label>
+                {{ requirement_form.location }}
+                {{ requirement_form.location.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="date_posted">Date Posted</label>
+               {{ requirement_form.date_posted }}
+                {{ requirement_form.date_posted.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="date_expiry">Job Expiration Date</label>
+               {{ requirement_form.date_expiry }}
+                {{ requirement_form.date_expiry.errors }}
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 column-height mb-4">
+               <label for="skills">Skills</label>
+                {{ requirement_form.skills }}
+                {{ requirement_form.skills.errors }}
+            </div>
+            <div class="col-sm-12 column-height mb-4">
+               <label for="address">Job Description</label>
+                {{ requirement_form.job_description }}
+                {{ requirement_form.job_description.errors }}
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+                <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    </form>
+
+{% endblock %}
+

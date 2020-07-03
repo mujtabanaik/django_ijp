@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+
+{% block content %}
+<div class="card border-dark mb-3" >
+  <div class="card-header">Employee Details</div>
+  <div class="card-body">
+    <form>
+    <fieldset>
+       <div class="col-sm-4 column-height">
+           <label><b>Name: </b></label> {{employee.name}}
+       </div>
+       <div class="col-sm-4 column-height">
+           <label><b>CUID: </b></label> {{employee.cu_id}}
+       </div>
+       <div class="col-sm-6 column-height">
+           <label><b>Date Of Birth: </b></label> {{employee.dob}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Designation: </b></label> {{employee.designation}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Employee Type:</b></label> {{employee.employee_type}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Date Of Joining: </b></label> {{employee.joining_date}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Level: </b></label> {{employee.emp_level}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Status: </b></label> {{employee.employee_status}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Contact: </b></label> {{employee.contact}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Gender: </b></label>{{employee.gender}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Marital Status: </b></label>{{employee.marital_status}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Skill Set: </b></label>{{employee.skill_set}}
+       </div>
+        <div class="col-sm-6 column-height">
+           <label><b>Address: </b></label>{{employee.address}}
+       </div>
+    </fieldset>
+</form>
+  </div>
+</div>
+
+{% endblock %}

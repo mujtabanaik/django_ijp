@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title">Apply Job</h5>
+      </div>
+<br>
+<form method="post">{% csrf_token %}
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+               <label for="employee_id">Employee ID</label>
+                {{ job_form.employee_id }}
+                {{ job_form.employee_id.errors }}
+            </div>
+           <div class="col-sm-3 column-height mb-4">
+               <label for="employee_name">Employee Name</label>
+                {{ job_form.employee_name }}
+                {{ job_form.employee_name.errors }}
+           </div>
+
+            <div class="col-sm-3 column-height mb-4">
+               <label for="current_designation">Current Designation</label>
+                {{ job_form.current_designation }}
+                {{ job_form.current_designation.errors }}
+           </div>
+
+            <div class="col-sm-3 column-height mb-4">
+               <label for="current_level">Current Level</label>
+                {{ job_form.current_level }}
+                {{ job_form.current_level.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="current_division">Current Division</label>
+                {{ job_form.current_division }}
+                {{ job_form.current_division.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="current_project">Current Project</label>
+                {{ job_form.current_project }}
+                {{ job_form.current_project.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+                <label for="reporting_lead">Reporting Lead</label>
+                {{ job_form.reporting_lead }}
+                {{ job_form.reporting_lead.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="reporting_manager">Reporting Manager</label>
+                {{ job_form.reporting_manager }}
+                {{ job_form.reporting_manager.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="duration_in_current_Level">Duration in current level</label>
+                {{ job_form.duration_in_current_Level }}
+                {{ job_form.duration_in_current_Level.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="last_promotion_if_any_and_when">Last Promotion if any and when</label>
+                {{ job_form.last_promotion_if_any_and_when }}
+                {{ job_form.last_promotion_if_any_and_when.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="date_applied">Date</label>
+                {{ job_form.date_applied }}
+                {{ job_form.date_applied.errors }}
+           </div>
+            <div class="col-sm-3 column-height mb-4">
+               <label for="job_id">Job Id</label>
+                {{ job_form.job_id }}
+                {{ job_form.job_id.errors }}
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 column-height mb-4">
+               <label for="skills">Skills</label>
+                {{ job_form.skills }}
+                {{ job_form.skills.errors }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 column-height mb-4">
+                <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+
+
+
+{% endblock %}
+

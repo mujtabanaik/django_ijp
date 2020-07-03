@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+      <div class="modal-header">
+        <h5 class="modal-title">Sign up</h5>
+      </div>
+    <br>
+          <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+
+
+
+{% endblock %}
